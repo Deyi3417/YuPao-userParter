@@ -10,5 +10,5 @@ app.use(NavBar)
 app.use(Icon)
 app.use(Tabbar)
 app.use(TabbarItem)
-
+// 挂载，顺序不能反
 app.mount('#app')
