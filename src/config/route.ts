@@ -3,16 +3,20 @@
 // 我们后面再讨论嵌套路由。
 import {createRouter, createWebHashHistory} from "vue-router";
 import * as VueRouter from "vue-router";
-import Home from "../pages/Home.vue";
-import User from "../pages/User.vue";
-import Team from "../pages/Team.vue";
-import LookFor from "../pages/LookFor.vue";
+import Home from "../pages/HomePage.vue";
+import User from "../pages/UserPage.vue";
+import Team from "../pages/TeamPage.vue";
+import SearchPage from "../pages/SearchPage.vue";
+import UserEditPage from "../pages/UserEditPage.vue"
+import SearchResultPage from "../pages/SearchResultPage.vue"
 
 const routes = [
     { path: '/', component: Home},
     { path: '/user', component: User },
     { path: '/team', component: Team },
-    { path: '/search', component: LookFor },
+    { path: '/search', component: SearchPage },
+    { path: '/user/edit', component: UserEditPage },
+    { path: '/user/list', component: SearchResultPage },
 ]
 
 // 3. 创建路由实例并传递 `routes` 配置

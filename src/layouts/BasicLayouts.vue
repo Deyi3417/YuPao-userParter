@@ -1,5 +1,5 @@
 <template>
-  <!--  NavBar  -->
+
 <!--  <van-nav-bar-->
 <!--      title="标题"-->
 <!--      left-text="返回"-->
@@ -7,37 +7,23 @@
 <!--      left-arrow-->
 <!--      @click-left="onClickLeft"-->
 <!--      @click-right="onClickRight"-->
-<!--  />-->
-
-  <van-nav-bar
-      title="标题"
-      left-text="返回"
-      right-text="按钮"
-      left-arrow
-      @click-left="onClickLeft"
-      @click-right="onClickRight"
-      fixed
+<!--      fixed-->
+<!--  >-->
+<!--    <template #right>-->
+<!--      <van-icon name="search" size="18"/>-->
+<!--    </template>-->
+<!--  </van-nav-bar>-->
+  <van-nav-bar title="标题" left-text="返回" left-arrow
+        @click-left="onClickLeft"
+        @click-right="onClickRight"
+               fixed
   >
     <template #right>
-      <van-icon name="search" size="18"/>
+      <van-icon name="search" size="18" />
     </template>
   </van-nav-bar>
 
   <div id="content">
-    <!--  if条件判断跳到不同的页面  -->
-    <!--    <template v-if="active === 'home'">-->
-    <!--      11111-->
-    <!--      <Home></Home>-->
-    <!--    </template>-->
-    <!--    <template v-if="active === 'team'">-->
-    <!--      22222-->
-    <!--      <Team></Team>-->
-    <!--    </template>-->
-    <!--    <template v-if="active === 'user'">-->
-    <!--      33333-->
-    <!--      <User></User>-->
-    <!--    </template>-->
-    <!--  Vue Router 控制跳到不同的页面  -->
     <router-view/>
   </div>
 
@@ -57,7 +43,9 @@ import * as LDY from "vue-router"
 // 注意引入依赖
 const router = LDY.useRouter();
 
-const onClickLeft = () => history.back();
+const onClickLeft = () => {
+  router.back()
+};
 const onClickRight = () => {
   router.push("/search")
 }
@@ -70,7 +58,7 @@ const onClickRight = () => {
 // const active = ref('home');
 const onChange = (index) => Toast({
   message: `标签 ${index}`,
-  position: "top"
+  // position: "top"
 });
 
 </script>
